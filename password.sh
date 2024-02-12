@@ -10,4 +10,4 @@ echo "User name is : $USERNAME"
 echo "Please enter password:"
 read -s PASSWORD
 #-s is to not show password 
-echo "Password  is : $PASSWORD"
+echo "Password  is : $PASSWORD" #printing for validation 
