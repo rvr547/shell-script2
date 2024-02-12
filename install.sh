@@ -1,7 +1,7 @@
 #!/bin/bash
 USER=$(id -u)
 
-if [ $USER -eq 1 ]
+if [ $USER -ne 0 ]
 then
     echo "Error: Please run this as root user"
 fi
