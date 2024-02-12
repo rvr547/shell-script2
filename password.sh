@@ -8,6 +8,6 @@ read USERNAME
 echo "User name is : $USERNAME"
 
 echo "Please enter password:"
-read PASSWORD
-
+read -s PASSWORD
+#-s is to not show password 
 echo "Password  is : $PASSWORD"
