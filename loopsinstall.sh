@@ -1,4 +1,5 @@
 #!/bin/bash
+#add improvemnts
 
 for i in $@
 do
