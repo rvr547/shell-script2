@@ -31,7 +31,7 @@ else
             echo "Installing $i"
             yum install $i -y &>>$LOGFILE
             VALIDATE $? "Installation of $i"
-            exit 1
+        
         else
             echo -e "$Y $i package already exists $N"
         fi
