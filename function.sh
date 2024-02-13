@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DATE=$(date + %F_%H-%M-%S)
+DATE=$(date + %F)
 SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 R="\e[31m "
