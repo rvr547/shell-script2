@@ -1,14 +1,15 @@
 #!/bin/bash
 USER=$(id -u)
+RED
 
 VALIDATE()
 {
     if [ $1 -ne 0 ]
     then
-        echo "Installation ...unsuccessful"
+        echo "$2 ...unsuccessful"
         exit 1
     else
-        echo "Installation ..successful"
+        echo "$2 ..successful"
     fi
 }
 
@@ -19,8 +20,8 @@ then
 fi
 #to check installation is success or not
 yum install mysql -y
-VALIDATE $?
+VALIDATE $? "Installing Mysql"
 
 yum install postfix -y
-VALIDATE $?
+VALIDATE $? "Installing Postfix"
 
