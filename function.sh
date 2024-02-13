@@ -1,5 +1,8 @@
 #!/bin/bash
-USER=$(id -u)
+
+DATE=$(date + %F-%H-%M:%S)
+SCRIPT_NAME=$0
+LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
@@ -8,12 +11,13 @@ VALIDATE()
 {
     if [ $1 -ne 0 ]
     then
-        echo "$R$2 ...unsuccessful$N"
+        echo "$2 ...$R unsuccessful$N"
         exit 1
     else
-        echo "$G$2 ..successful$N"
+        echo "$2 .. $G successful$N"
     fi
 }
+USER=$(id -u)
 
 if [ $USER -ne 0 ]
 then
