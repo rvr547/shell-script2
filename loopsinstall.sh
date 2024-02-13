@@ -24,10 +24,11 @@ then
 else
     for i in $@
     do
-        if [ $(yum list installed $i) -ne 0]
+        if [ $(yum list installed $i) -ne 0 ]
         then
             yum install $i -y &>>$LOGFILE
             VALIDATE $? "Installation of $i"
+            exit 1
         else
             echo "$i already installed"
         fi
