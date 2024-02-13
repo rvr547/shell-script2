@@ -30,5 +30,6 @@ else
             VALIDATE $? "Installation of $i"
         else
             echo "$i already installed"
+        fi
     done
 fi
