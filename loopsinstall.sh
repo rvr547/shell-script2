@@ -19,6 +19,7 @@ VALIDATE()
 if [ $USER -ne 0 ]
 then
     echo -e "ERROR: $R USE Root access to use this command $N"
+    exit 1
 else
     for i in $@
     do
