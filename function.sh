@@ -1,15 +1,17 @@
 #!/bin/bash
 USER=$(id -u)
-RED
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 VALIDATE()
 {
     if [ $1 -ne 0 ]
     then
-        echo "$2 ...unsuccessful"
+        echo "$R$2 ...unsuccessful$N"
         exit 1
     else
-        echo "$2 ..successful"
+        echo "$G$2 ..successful$N"
     fi
 }
 
