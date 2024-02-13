@@ -17,6 +17,7 @@ VALIDATE()
         echo "$2 .. $G successful$N"
     fi
 }
+
 USER=$(id -u)
 
 if [ $USER -ne 0 ]
@@ -25,9 +26,9 @@ then
     exit 1
 fi
 #to check installation is success or not
-yum install mysql -y
+yum install mysql -y &>>$LOGFILE
 VALIDATE $? "Installing Mysql"
 
-yum install postfix -y
+yum install postfix -y &>>$LOGFILE
 VALIDATE $? "Installing Postfix"
 
