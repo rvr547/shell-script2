@@ -8,6 +8,7 @@ LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
+Y="\e[33m"
 VALIDATE()
 {
     if [ $1 -ne 0 ]
@@ -24,13 +25,15 @@ then
 else
     for i in $@
     do
-        if [ $(yum list installed $i) -ne 0 ]
+    yum list installed $i &>>$LOGFILE
+        if [ $? -ne 0]
         then
+            echo "Installing $i"
             yum install $i -y &>>$LOGFILE
             VALIDATE $? "Installation of $i"
             exit 1
         else
-            echo "$i already installed"
+            echo -e "$Y $i package already exists $N"
         fi
     done
 fi
