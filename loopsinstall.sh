@@ -4,6 +4,7 @@ USER=$(id -u)
 DATE=$(date +%F)
 SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
+
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
@@ -23,7 +24,11 @@ then
 else
     for i in $@
     do
-        yum install $i -y &>>$LOGFILE
-        VALIDATE $? "Installation of $i"
+        if [ $(yum list installed $i) -ne 0]
+        then
+            yum install $i -y &>>$LOGFILE
+            VALIDATE $? "Installation of $i"
+        else
+            echo "$i already installed"
     done
 fi
