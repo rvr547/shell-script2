@@ -3,7 +3,7 @@
 IMGID=ami-0f3c7d07486cad139
 INSTANCE_TYPE=""
 SEC_GROUP_ID=sg-083fadb585b1228bb
-DOMAIN_NAME=preprv.online.com
+DOMAIN_NAME=preprv.online
 
 for i in $@
 do
