@@ -20,7 +20,7 @@ aws route53 change-resource-record-sets --hosted-zone-id Z05567796ESR36J2OFN7 --
 {
         "Comment": "CREATE/DELETE/UPSERT a record ",
                     "Changes": [{
-                    "Action": "UPSERT",
+                    "Action": "CREATE",
                     "ResourceRecordSet": {
                             "Name": " '$i.$DOMAIN_NAME' ",
                             "Type": "A",
